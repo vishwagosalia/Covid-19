@@ -1,8 +1,6 @@
 # Covid-19
 
-
-
-Installation
+<h2>Installation</h2>
 Clone the repo & Use Composer to setup the project.
 
 composer install
