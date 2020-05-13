@@ -28,8 +28,8 @@ Route::get('/doctors', function() {
     return view('doctors');
 });
 
-Route::get('/news', function() {
-    return view('news');
+Route::get('/graph', function() {
+    return view('graph');
 });
 
 Route::get('/map', function() {

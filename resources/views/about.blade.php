@@ -38,20 +38,12 @@
                <div class="logo"><a href="{{'/'}}"><img src="images/logo.png"></a></div>
                   <div class="menu_text">
                      <ul>
-                        <div class="togle_">
-                           <div class="menu_main">
-                              <ul>
-                                 <li><a href="https://github.com/vishwagosalia" target="_blank">VISHWA GOSALIA</a></li>
-                                 {{-- <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li> --}}
-                              </ul>
-                           </div>
-                        </div>
                         <div id="myNav" class="overlay">
                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                            <div class="overlay-content">
                               <a href="{{'/'}}">Home</a>
-                              <a href="{{'/map'}}">Data on Map</a>
-                              <a href="{{'/news'}}">News</a>
+                              <a href="{{'/map'}}">Map</a>
+                              <a href="{{'/graph'}}">Bar Graph</a>
                               <a href="{{'/protect'}}">Protect</a>
                               <a href="{{'/about'}}">About</a>
                            </div>
@@ -88,7 +80,7 @@
                <div class="col-md-6">
                   <h1 class="about_taital">Coronavirus what it is?</span></h1>
                   <p class="about_text">Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus. Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without special treatment.</p>
-                  <div class="read_bt"><a href="https://indianexpress.com/article/explained/what-is-the-coronavirus-pandemic-and-how-it-spread-across-the-world-6397912/">Read More</a></div>
+                  <div class="read_bt"><a href="https://indianexpress.com/article/explained/what-is-the-coronavirus-pandemic-and-how-it-spread-across-the-world-6397912/" target="_blank">Read More</a></div>
                </div>
             </div>
          </div>
@@ -142,27 +134,27 @@
          <div class="container">
             <div class="footer_section_2">
                <div class="row">
-                  <div class="col-lg-3 col-sm-6">
+                  <div class="col-lg-2 col-lg-8">
                      <h2 class="useful_text">About the developer</h2>
                      <p class="footer_text">Aspiring Software Engineer.</p>
                      <p class="footer_text">Interested in Web development.</p>
-                     <p class="footer_text">Suggestions are always welcome in "Issues" section on <ins><a class="text-light" href="https://github.com/vishwagosalia">Github.</a></ins></p>
+                     <p class="footer_text">Suggestions are always welcome in "Issues" section on <ins><a class="text-light" href="https://github.com/vishwagosalia/Covid-19/issues">Github.</a></ins></p>
                   </div>
                   <div class="col-lg-3 col-sm-6">
                      <h2 class="useful_text">Contact Us</h2>
                      <div class="location_text">
                         <ul>
                            <li>
-                              <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                              <span class="padding_15">Location</span></a>
+                              <i class="fa fa-map-marker" aria-hidden="true"></i>
+                              <span class="padding_15">Location</span>
                            </li>
                            <li>
-                              <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>
-                              <span class="padding_15">Call +01 1234567890</span></a>
+                              <i class="fa fa-phone" aria-hidden="true"></i>
+                              <span class="padding_15">Call +01 1234567890</span>
                            </li>
                            <li>
-                              <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>
-                              <span class="padding_15">demo@gmail.com</span></a>
+                              <i class="fa fa-envelope" aria-hidden="true"></i>
+                              <span class="padding_15">demo@gmail.com</span>
                            </li>
                         </ul>
                      </div>
@@ -177,7 +169,7 @@
          <div class="container">
             <div class="row">
                <div class="col-sm-12">
-                  <p class="copyright_text">©Made with love from VISHWA GOSALIA.</p>
+                  <p class="copyright_text">©Made by VISHWA GOSALIA.</p>
                </div>
             </div>
          </div>

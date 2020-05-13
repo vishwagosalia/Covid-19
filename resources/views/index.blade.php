@@ -23,8 +23,6 @@
       <link rel="icon" href="{{asset('images/fevicon.png')}}" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="{{asset('css/jquery.mCustomScrollbar.min.css')}}">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       <!-- leaflet cdn links --> 
@@ -35,7 +33,6 @@
       <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
       integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
       crossorigin=""></script>
-
       </head>
    <body>
       <!--header section start -->
@@ -49,7 +46,6 @@
                            <div class="menu_main">
                               <ul>
                                  <li><a href="https://github.com/vishwagosalia">Vishwa Gosalia</a></li>
-                                 {{-- <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li> --}}
                               </ul>
                            </div>
                         </div>
@@ -57,8 +53,8 @@
                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                            <div class="overlay-content">
                               <a href="{{'/'}}">Home</a>
-                              <a href="{{'/map'}}">Data on Map</a>
-                              <a href="{{'/news'}}">News</a>
+                              <a href="{{'/map'}}">Map</a>
+                              <a href="{{'/graph'}}">Bar Graph</a>
                               <a href="{{'/protect'}}">Protect</a>
                               <a href="{{'/about'}}">About</a>
                            </div>
@@ -75,13 +71,13 @@
             <div class="container">
                <div id="my_slider" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
-                     <div class="carousel-item active">
+                     <div class="carousel-item">
                         <div class="row">
                            <div class="col-md-6">
                               <div class="container">
                                  <h1 class="banner_taital">Covid-19 Curse VS boon</h1>
                                  <p class="banner_text">Its the humans who led the raise of COVID-19 from epidemic to pandemic which led to global crisis, it can be the revenge of nature through the years which we have been devastating.</p>
-                                 <div class="more_bt"><a href="#" target="_blank">Read more</a></div>
+                                 <div class="more_bt"><a href="https://www.unenvironment.org/news-and-stories/story/covid-19-and-nature-trade-paradigm" target="_blank">Read more</a></div>
                                  
                               </div>
                            </div>
@@ -90,7 +86,7 @@
                            </div>
                         </div>
                      </div>
-                     <div class="carousel-item">
+                     <div class="carousel-item active">
                         <div class="row">
                            <div class="col-md-6">
                               <div class="container">
@@ -146,7 +142,7 @@
                      </div>
                      <div class="taital_right">
                         <h1 class="doctor_taital text-dark">What doctors say..</h1>
-                        <p class="doctor_text text-dark"><b>STAY home, KEEP a safe distance, WASH hands often, COVER your cough, SICK? Call the helpline</b></p>
+                        <p class="doctor_text text-dark"><b>STAY home, KEEP a safe distance, WASH hands often, COVER your cough, SICK? Call your Doctor.</b></p>
                         <div class="readmore_bt"><a href="https://www.bbc.com/news/world-asia-india-52377965" target="_blank">Read More</a></div>
                      </div>
                   </div>
@@ -160,27 +156,27 @@
          <div class="container">
             <div class="footer_section_2">
                <div class="row">
-                  <div class="col-lg-3 col-sm-6">
+                  <div class="col-lg-2 col-lg-8">
                      <h2 class="useful_text">About the developer</h2>
                      <p class="footer_text">Aspiring Software Engineer.</p>
                      <p class="footer_text">Interested in Web development.</p>
-                     <p class="footer_text">Suggestions are always welcome in "Issues" section on <ins><a class="text-light" href="https://github.com/vishwagosalia">Github.</a></ins></p>
+                     <p class="footer_text">Suggestions are always welcome in "Issues" section on <ins><a class="text-light" href="https://github.com/vishwagosalia/Covid-19/issues">Github.</a></ins></p>
                   </div>
                   <div class="col-lg-3 col-sm-6">
                      <h2 class="useful_text">Contact Us</h2>
                      <div class="location_text">
                         <ul>
                            <li>
-                              <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                              <span class="padding_15">Location</span></a>
+                              <i class="fa fa-map-marker" aria-hidden="true"></i>
+                              <span class="padding_15">Location</span>
                            </li>
                            <li>
-                              <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>
-                              <span class="padding_15">Call +01 1234567890</span></a>
+                              <i class="fa fa-phone" aria-hidden="true"></i>
+                              <span class="padding_15">Call +01 1234567890</span>
                            </li>
                            <li>
-                              <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>
-                              <span class="padding_15">demo@gmail.com</span></a>
+                              <i class="fa fa-envelope" aria-hidden="true"></i>
+                              <span class="padding_15">demo@gmail.com</span>
                            </li>
                         </ul>
                      </div>
@@ -195,7 +191,7 @@
          <div class="container">
             <div class="row">
                <div class="col-sm-12">
-                  <p class="copyright_text">©Made with love from VISHWA GOSALIA.</p>
+                  <p class="copyright_text">©Made by VISHWA GOSALIA.</p>
                </div>
             </div>
          </div>
@@ -205,15 +201,13 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
       <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
       <script src="{{asset('js/jquery.min.js')}}"></script>
-      {{-- <script src="{{asset('js/popper.min.js')}}"></script> --}}
       <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
       <script src="{{asset('js/jquery-3.0.0.min.js')}}"></script>
       <script src="{{asset('js/plugin.js')}}"></script>
       <!-- sidebar -->
       <script src="{{asset('js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
       <script src="{{asset('js/custom.js')}}"></script>
-      <!-- javascript --> 
-      <script src="{{asset('js/owl.carousel.js')}}"></script>
+
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
       <script>
          $(document).ready(function(){
@@ -271,7 +265,7 @@
                   datasets: [{
                      label: 'Total Cases in India',
                      data: stats,
-                     backgroundColor: ['blue','#D3D3D3','red','green'],
+                     backgroundColor: ['blue','yellow','red','green'],
                      borderWidth: 2,
                      borderColor: '#777',
                      hoverBorderWidth: 3,

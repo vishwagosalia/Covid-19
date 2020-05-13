@@ -1,6 +1,6 @@
 var map = L.map('map').setView([19.07, 72.87], 5);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    attribution: '<a href="https://github.com/vishwagosalia">Made by Vishwa Gosalia<a>',
     maxZoom: 14,
     id: 'mapbox/streets-v11',
     tileSize: 512,
@@ -13,7 +13,8 @@ var statelines = {
     "weight":3,
     "opacity":4,
     "fill":false
-  };
+};
+
 var color = '#fff';
 var arrcolor = ['#310101', '#460605', '#6B3431', '#A67E7A', '#DBC5C1'];
 var legend = L.control ({position: 'bottomright'});
@@ -38,13 +39,12 @@ var legend = L.control ({position: 'bottomright'});
 	}
 legend.addTo(map);
 
+var lat, lng, statename;
 var gjLayerStates = L.geoJson(geoStates, {style: statelines}).addTo(map);
 
 function style(geoStates) {
     for (i=0; i<data.length; i++)
     {
-        // console.log(geoStates.properties.ST_NM);
-        // console.log(data.data[i].state);
         if(geoStates.properties.ST_NM == data[i]["state"])
         {
             if (data[i].confirmed > 10000) {
@@ -79,14 +79,13 @@ function style(geoStates) {
 }
 var gjLayerDist = L.geoJson( geoStates, {style: style, onEachFeature: onEachState}).addTo(map);
 
-function onEachState(geoStates, layer, e)
+function onEachState(geoStates, layer)
 {
     //CONNECTING TOOLTIP AND POPUPS TO DISTRICTS
     layer.on({
       mouseover: highlightFeature,
       mouseout: resetHighlight,
-      click: Clickable,
-      //click: zoomToFeature
+      click: zoomToFeature,
     });
     layer.bindTooltip( geoStates.properties.ST_NM, {
         direction : 'auto',
@@ -94,16 +93,19 @@ function onEachState(geoStates, layer, e)
         permanent : false,
         sticky    : true
     });
-    // marker.bindPopup(popContent(geoStates), {
-    //     maxWidth:600,
-    //     closeButton: true,
-    // }); // TODO ***
+    
+    // GET CO-ORDINATES OF CURSOR ON MAP
+    map.addEventListener('mousemove', function(ev) {
+    lat = ev.latlng.lat;
+    lng = ev.latlng.lng;
+    });
 }
 
 function highlightFeature(e) 
 {
     //STATE HIGHLIGHT ON MOUSEOVER
     var layer = e.target;
+    statename = layer.feature.properties.ST_NM;
 
     layer.setStyle( {
         weight: 3,
@@ -111,6 +113,7 @@ function highlightFeature(e)
         opacity: 2
     });
     if (!L.Browser.ie && !L.Browser.opera ) {
+        // console.log("in if");
         layer.bringToFront();
     }
 }
@@ -125,9 +128,26 @@ function resetHighlight(e) {
         opacity: 0.4
     });
 }
-
-function Clickable(e) {
-    // var layer = e.target;
-    console.log('click recd');
+// console.log(lat);
+// console.log(lng);
+function zoomToFeature(e) {
+    // PROBABLY THE MAP VARIABLE NEEDS TO BE A GLOBAL VARIABLE HERE
+    // map.fitBounds(e.target.getBounds());
+    for (i in data)
+    {
+        if(statename == data[i].state)
+        {
+            document.getElementById('displaystatename').innerHTML = statename;
+            document.getElementById('active').innerHTML = "Active: "+ data[i].active;
+            document.getElementById('confirmed').innerHTML = "Confirmed: "+ data[i].confirmed;
+            document.getElementById('deaths').innerHTML = "Deaths: "+ data[i].deaths;
+            document.getElementById('recovered').innerHTML = "Recovered: "+ data[i].recovered;
+        }
+    }
     
+    var popup = L.popup()
+        .setLatLng([lat,lng])
+        .setContent('<p><b>SCROLL DOWN FOR MORE DATA.</b></p>')
+        .openOn(map);
+
 }

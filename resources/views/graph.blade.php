@@ -47,23 +47,14 @@
                   <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
                   <div class="menu_text">
                      <ul>
-                        <div class="togle_">
-                           <div class="menu_main">
-                              <ul>
-                                 <li><a href="#">Login</a></li>
-                                 {{-- <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li> --}}
-                              </ul>
-                           </div>
-                        </div>
                         <div id="myNav" class="overlay">
                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                            <div class="overlay-content">
                               <a href="{{'/'}}">Home</a>
-                              <a href="{{'/map'}}">Data on Map</a>
-                              <a href="{{'/news'}}">News</a>
+                              <a href="{{'/map'}}">Map</a>
+                              <a href="{{'/graph'}}">Bar Graph</a>
                               <a href="{{'/protect'}}">Protect</a>
                               <a href="{{'/about'}}">About</a>
-                              {{-- <a href="{{'/doctors'}}">Doctors</a> --}}
                            </div>
                         </div>
                         <span class="navbar-toggler-icon"></span>
@@ -107,7 +98,7 @@
          <div class="container">
             <div class="row">
                <div class="col-sm-12">
-                  <p class="copyright_text">©Made with love from VISHWA GOSALIA.</p>
+                  <p class="copyright_text">©Made by VISHWA GOSALIA.</p>
                </div>
             </div>
          </div>
@@ -179,7 +170,7 @@
                data: {
                   labels: states,
                   datasets: [{
-                     label: 'Active cases in each state',
+                     label: 'Confirm cases in each state',
                      data: activecases, 
                      backgroundColor: '#187795',
                      borderWidth: 1,

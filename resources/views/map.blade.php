@@ -23,14 +23,25 @@
          }
          .legend { background : white; line-height : 1.5em}
 			.legend i { width : 5em; float : left }
+         #details {
+            background-image: linear-gradient(to right,#310101, #6B3431, #A67E7A, #DBC5C1);
+            color: white;
+            margin: auto;
+         }
       </style>
    </head>
    <body>
       <div id="map"></div>
-      {{-- <p>LEGEND</p> --}}
-    <script>
-        var data = [];
-        $.ajax({
+      <div id="details">
+         <h2><p id="displaystatename"></p></h2>
+         <h4><p id="active"></p></h4>
+         <h4><p id="confirmed"></p></h4>
+         <h4><p id="deaths"></p></h4>
+         <h4><p id="recovered"></p></h4>
+      </div>
+      <script>
+         var data = [];
+         $.ajax({
             'async': false,
             'global': false,
             'method': "GET",
@@ -41,7 +52,7 @@
                //  console.log(result);
             }
         });
-    </script>
+      </script>
 
     <script src="{{asset('js/choropleth.js')}}"></script>
    </body>

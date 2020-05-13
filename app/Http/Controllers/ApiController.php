@@ -9,6 +9,7 @@ class ApiController extends Controller
 {
     public function CallApi()
     {
+        // API inherited from - https://rapidapi.com/spamakashrajtech/api/corona-virus-world-and-india-data?endpoint=apiendpoint_e53bab74-70b7-42e9-9d95-4667fdcfa876
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
