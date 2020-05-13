@@ -1,7 +1,6 @@
 # Covid-19
-##Screenshots
-![Map image](https://github.com/vishwagosalia/Covid-19/tree/master/public/images/map.png)
-##Installation
+Project to display Covid-19 cases on **graph, piechart and Choropleth maps** using **Laravel, Chart.js** and **Leaflet.js**
+## Installation
 Clone the repo & Use Composer to setup the project.
 
 - `composer install`
