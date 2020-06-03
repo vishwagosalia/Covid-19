@@ -135,7 +135,7 @@
             "method": "GET",
             "headers": {
                "x-rapidapi-host": "corona-virus-world-and-india-data.p.rapidapi.com",
-               "x-rapidapi-key": "your-api-key"
+               "x-rapidapi-key": "17b0303beemsh45a32f7f99a6756p15638cjsn0a25f4fc90cc"
             }
          }
 

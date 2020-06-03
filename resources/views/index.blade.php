@@ -243,6 +243,7 @@
             'url': "/api/update-india-data",
             'dataType': "json",
             'success': function (result) {
+               // console.log(result)
                data = result;
                var attributes = Object.keys(data);
                var stats = Object.values(data);
